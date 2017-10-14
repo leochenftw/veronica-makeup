@@ -1,0 +1,37 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding-top: 20px;
+    .page-type-home-page & {
+        padding-top: 100px;
+        @include mobile {
+            padding-top: 20px;
+        }
+    }
+
+    @include mobile {
+        .columns {
+            @include display-flex;
+        }
+    }
+
+    a {
+        color: white;
+        @include transition(all ease 0.5s);
+    }
+
+    @include transition(all ease 0.5s);
+    &.white {
+        background-color: white;
+        padding-top: 0;
+        a {
+            color: $black;
+        }
+    }
+
+    @import 'elements/logo';
+    @import 'elements/nav';
+}

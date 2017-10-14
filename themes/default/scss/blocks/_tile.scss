@@ -1,0 +1,15 @@
+.tile {
+
+    &.is-parent {
+        padding: 2.5px;
+    }
+
+    &.is-vertical > .tile.is-child:not(:last-child) {
+        margin-bottom: 5px !important;
+    }
+
+    .page-type-home-page & {
+        background-size: cover;
+        background-position: center;
+    }
+}

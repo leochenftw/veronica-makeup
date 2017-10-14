@@ -1,0 +1,55 @@
+---
+Name: mainsite
+After: 'framework/*','cms/*'
+---
+# YAML configuration for SilverStripe
+# See http://doc.silverstripe.org/framework/en/topics/configuration
+# Caution: Indentation through two spaces, not tabs
+SiteVersion:
+  version: 1.0
+Email:
+  admin_email: 'Administrator <admin@veronicamakeup.co.nz>'
+  noreply_email: 'Auto Replay <no-reply@veronicamakeup.co.nz>'
+SSViewer:
+  theme: 'default'
+
+Image:
+  extensions:
+    - ImageExt
+Page:
+  extensions:
+    - OpenGraphExtension
+    - TwitterCardExtension
+    - SeoObjectExtension
+    - SEOExtension
+SiteConfig:
+  extensions:
+    - CustomSiteConfig
+    - OpenGraphExtension
+    - TwitterCardExtension
+Page_Controller:
+  extensions:
+    - PageControllerDecorator
+ModelAdmin:
+  extensions:
+    - ModelAdminExtension
+BackgroundPosition:
+  Horizontal:
+    'left': 'Left'
+    'center': 'Center'
+    'right': 'Right'
+  Vertical:
+    'top': 'Top'
+    'center': 'Center'
+    'bottom': 'Bottom'
+MenuSet:
+  default_sets:
+    - "Main Menu"
+SeoConfig:
+    Page: true
+    ErrorPage: false
+    RedirectorPage: false
+    VirtualPage: false
+SaltedPayment:
+  DefaultCurrency: 'NZD'
+  DefaultOrderClass: 'Order'

@@ -1,0 +1,84 @@
+form {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+fieldset {
+    border: none;
+}
+
+label {
+    @extend .label;
+}
+
+input.text {
+    @extend .input;
+}
+
+input.action {
+    @extend .button;
+}
+
+.is {
+    &-maxheight {
+        height: 100%;
+    }
+
+    &-absolute {
+        position: absolute;
+    }
+
+    &-relative {
+        position: relative;
+    }
+
+    &-transparent {
+        background-color: transparent;
+    }
+}
+
+.width {
+    &-is {
+        &-320 {
+            width: 320px;
+        }
+
+        &-480 {
+            max-width: 480px;
+        }
+
+        &-540 {
+            max-width: 540px;
+        }
+
+        &-600 {
+            max-width: 600px;
+        }
+
+        &-720 {
+            max-width: 720px;
+        }
+
+        &-960 {
+            max-width: 960px;
+        }
+    }
+}
+
+.icon {
+    width: auto;
+}
+
+.hide,
+.is-hidden {
+    display: none;
+}
+
+.columns {
+    &.should {
+        &-wrap {
+            @include flex-wrap(wrap);
+        }
+    }
+}

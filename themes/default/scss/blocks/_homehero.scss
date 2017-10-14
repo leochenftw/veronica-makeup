@@ -1,0 +1,90 @@
+.hero {
+    position: relative;
+    background-color: transparent;
+    &:before {
+        content: '';
+        display: block;
+        @extend .is-overlay;
+        z-index: 0;
+        background-color: rgba(0,0,0,0.7);
+    }
+
+    .hero-body {
+        position: relative;
+        z-index: 1;
+        .container {
+            width: 100%;
+        }
+
+        @include mobile {
+            height: 40vh;
+            .page-type-home-page & {
+                height: 80vh;
+            }
+            @include display-flex;
+            @include align-items(center);
+        }
+        header {
+            margin-bottom: 36px;
+            .title {
+                color: #fff;
+                margin-bottom: 0.75em;
+            }
+
+            .subtitle {
+                color: rgba(255,255,255,0.6);
+                .page-type-dashboard &,
+                .page-type-cart &,
+                .page-type-photoset & {
+                    span {
+                        color: #fff;
+                        font-weight: normal;
+                    }
+                }
+
+                .page-type-photoset & {
+                    span {
+                        font-size: 32px;
+                    }
+                }
+            }
+        }
+
+        .extra-info {
+            margin-top: 20px;
+            color: $grey;
+            line-height: 1.6;
+            span {
+                font-weight: normal;
+                font-size: 16px;
+                color: white;
+            }
+        }
+
+        .button {
+            color: white;
+            border-color: white;
+            padding: 0.5em 4em;
+            height: auto;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: lighter;
+            border-width: 2px;
+            border-radius: 0;
+            @include transition(all ease 0.5s);
+            &:hover {
+                background-color: white;
+                color: $black;
+            }
+
+            &.action {
+                background-color: transparent;
+                color: white;
+            }
+        }
+
+        .Actions {
+            text-align: center;
+        }
+    }
+}

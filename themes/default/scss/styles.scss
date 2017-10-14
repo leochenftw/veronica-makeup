@@ -1,0 +1,30 @@
+@import 'compass';
+@import "font-awesome-compass";
+@import "font-awesome";
+
+// $turquoise: #E57E25;
+// $grey-dark: #95a5a6;
+
+@import "bulma/bulma";
+@import 'config/ss-shim',
+        'config/sprite';
+@include retina-sprite-add(spritesheet, 'sprites/*.png', 'retina_sprites/*.png');
+
+@import 'blocks/header',
+        'blocks/homehero',
+        'blocks/main',
+        'blocks/tile',
+        'blocks/lightbox',
+        'blocks/footer';
+
+@import 'components/divider',
+        'components/linker';
+
+.slide-up {
+    @include transform(translateY(150px));
+    @include transition(all ease 0.8s);
+
+    &.shown {
+        @include transform(translateY(0));
+    }
+}

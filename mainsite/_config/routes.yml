@@ -1,0 +1,12 @@
+---
+Name: apiroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    # 'signup': 'Signup'
+    # 'signin': 'Signin'
+    # 'member': 'Dashboard'
+    # 'photosets/$sku': 'PhotoSetController'
+    # 'cart': 'CartController'
+    # 'api/v/1/transac/$ID': 'TransacAPI'
