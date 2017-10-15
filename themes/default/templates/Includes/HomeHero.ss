@@ -1,4 +1,4 @@
-<section class="hero is-<% if $Size %>$Size<% else %>large<% end_if %> parallax-window" data-parallax="scroll" data-image-src="$PageHero.Cropped.SetWidth(1920).URL">
+<section data-jarallax data-speed="0.2" class="jarallax hero is-<% if $Size %>$Size<% else %>large<% end_if %>" style="background-image: url($PageHero.Cropped.SetWidth(1920).URL);">
     <div class="hero-body">
         <div class="container">
             <header class="has-text-centered">

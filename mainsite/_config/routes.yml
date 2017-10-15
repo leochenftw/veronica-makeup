@@ -9,4 +9,4 @@ Director:
     # 'member': 'Dashboard'
     # 'photosets/$sku': 'PhotoSetController'
     # 'cart': 'CartController'
-    # 'api/v/1/transac/$ID': 'TransacAPI'
+    'api/v/1/pohto': 'PhotoAPI'

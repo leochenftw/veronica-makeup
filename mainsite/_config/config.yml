@@ -10,12 +10,17 @@ SiteVersion:
 Email:
   admin_email: 'Administrator <admin@veronicamakeup.co.nz>'
   noreply_email: 'Auto Replay <no-reply@veronicamakeup.co.nz>'
+  info_email: 'Veronica Zhou <muimuimmmm@gmail.com>'
 SSViewer:
   theme: 'default'
 
 Image:
   extensions:
     - ImageExt
+  Categories:
+    'fashion': 'Fashion'
+    'stage': 'Stage'
+    'pre-wedding': 'Pre Wedding'
 Page:
   extensions:
     - OpenGraphExtension
