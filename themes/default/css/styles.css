@@ -11526,7 +11526,7 @@ h1.title, h2.title, h3.title, h4.title, h5.title, h6.title {
     align-items: center;
   }
   .page-type-home-page .hero .hero-body {
-    height: 80vh;
+    height: 100vh;
   }
 }
 .hero .hero-body header {

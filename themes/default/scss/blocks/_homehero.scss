@@ -19,7 +19,7 @@
         @include mobile {
             height: 40vh;
             .page-type-home-page & {
-                height: 80vh;
+                height: 100vh;
             }
             @include display-flex;
             @include align-items(center);
