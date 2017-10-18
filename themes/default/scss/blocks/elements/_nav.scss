@@ -1,3 +1,49 @@
-.nav {
+.navbar {
     background-color: transparent;
+    &-item {
+        img {
+            @include transition(all .3s);
+            max-height: none;
+            height: 80px;
+            width: 91px;
+            @include until(480px) {
+                height: 60px;
+                width: 68px;
+            }
+        }
+        &:hover,
+        &.is-active {
+            color: $veronica;
+            background-color: transparent;
+        }
+    }
+
+    &-burger {
+        height: auto;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        span {
+            background-color: white;
+        }
+        &:hover {
+            background-color: transparent;
+        }
+
+        @include until(1024px) {
+            @include display-flex;
+            align-items: center;
+        }
+
+        .button {
+            box-shadow: none;
+            outline: none;
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: transparent;
+            border: none;
+            .fa {
+                color: white;
+            }
+        }
+    }
 }

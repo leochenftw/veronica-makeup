@@ -8,15 +8,25 @@ class HomePage extends Page
      * @var array
      */
     private static $db = [
-        'PhotosTitle'   =>  'Varchar(128)',
-        'AboutUs'       =>  'HTMLText'
+        'PhotosTitle'       =>  'Varchar(128)',
+        'AboutUs'           =>  'HTMLText',
+        'ContactTitle'      =>  'Varchar(128)',
+        'ContactContent'    =>  'HTMLText'
     ];
     /**
      * Many_many relationship
      * @var array
      */
     private static $many_many = [
-        'Photos'        =>  'Image'
+        'Photos'            =>  'GalleryItem'
+    ];
+
+    /**
+     * Has_one relationship
+     * @var array
+     */
+    private static $has_one = [
+        'ContactImage'      =>  'Image'
     ];
 
     /**
@@ -33,12 +43,25 @@ class HomePage extends Page
                     'PhotosTitle',
                     'Title for photo section'
                 ),
-                SortableUploadField::create(
-                    'Photos',
-                    'Photos'
-                )
+                Grid::make('Photos', 'Photos', $this->Photos(), true, 'GridFieldConfig_RelationEditor')
             ]
         );
+
+        $fields->addFieldsToTab(
+            'Root.ContactForm',
+            [
+                TextField::create(
+                    'ContactTitle',
+                    'Title'
+                ),
+                HtmlEditorField::create(
+                    'ContactContent',
+                    'Content'
+                ),
+                SaltedUploader::create('ContactImage', 'Image')->setCropperRatio(33/41)
+            ]
+        );
+
         return $fields;
     }
 }
@@ -46,16 +69,16 @@ class HomePage extends Page
 class HomePage_Controller extends Page_Controller
 {
     /**
-     * Defines the allowed child page types
+     * Defines methods that can be called directly
      * @var array
      */
-    private static $allowed_children = [
-        'ContactForm'
+    private static $allowed_actions = [
+        'ContactForm' => true
     ];
 
     public function getPhotoCategories()
     {
-        $config = Config::inst()->get('Image', 'Categories');
+        $config = Config::inst()->get('GalleryItem', 'Categories');
         $datalist       =   [];
         foreach ($config as $key => $value) {
             $data       =   ['Key' => $key, 'Value' => $value];

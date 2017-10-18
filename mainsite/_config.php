@@ -24,6 +24,8 @@ if (Director::isLive()) {
 	SS_Log::add_writer(new SS_LogEmailWriter('administration@saltedherring.com'), SS_Log::ERR);
 }
 
+SS_Cache::set_cache_lifetime('GalleryItem', 31536000, 1000);
+
 if(class_exists('Memcache')){
 	SS_Cache::add_backend(
 		'primary_memcached',

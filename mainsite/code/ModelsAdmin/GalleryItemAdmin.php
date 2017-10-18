@@ -1,9 +1,10 @@
 <?php
 
-class PhotoSetAdmin extends ModelAdmin {
-    private static $managed_models = array('PhotoSet');
-    private static $url_segment = 'photosets';
-    private static $menu_title = 'Photo sets';
+class GalleryItemAdmin extends ModelAdmin
+{
+    private static $managed_models = array('GalleryItem');
+    private static $url_segment = 'gallery-items';
+    private static $menu_title = 'Gallery';
     // private static $menu_icon = 'themes/default/images/cms_icons/camera.png';
 
     public function getEditForm($id = null, $fields = null) {
@@ -15,7 +16,8 @@ class PhotoSetAdmin extends ModelAdmin {
             ->removeComponentsByType('GridFieldExportButton')
             ->removeComponentsByType('GridFieldPrintButton')
             ->addComponents(
-                new GridFieldPaginatorWithShowAll(30)
+                new GridFieldPaginatorWithShowAll(30),
+                new GridFieldOrderableRows('SortOrder')
             );
         return $form;
     }

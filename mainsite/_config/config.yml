@@ -13,10 +13,13 @@ Email:
   info_email: 'Veronica Zhou <muimuimmmm@gmail.com>'
 SSViewer:
   theme: 'default'
-
+GoogleAPIs:
+  Recaptcha: 6Le1rjQUAAAAAD8IdF0v1J2c2eHCLFCceVhVaZ11
+  Recaptcha_sitekey: 6Le1rjQUAAAAAJVDm2dVmp1-inoaOhMJYqqSzpRm
 Image:
   extensions:
     - ImageExt
+GalleryItem:
   Categories:
     'fashion': 'Fashion'
     'stage': 'Stage'
@@ -55,6 +58,3 @@ SeoConfig:
     ErrorPage: false
     RedirectorPage: false
     VirtualPage: false
-SaltedPayment:
-  DefaultCurrency: 'NZD'
-  DefaultOrderClass: 'Order'

@@ -1,15 +1,20 @@
-form {
-    max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 fieldset {
     border: none;
 }
 
 label {
     @extend .label;
+}
+
+div.optionset,
+div.checkboxset {
+    ul.optionset {
+        li {
+            label {
+                display: inline-block;
+            }
+        }
+    }
 }
 
 input.text {
@@ -20,7 +25,58 @@ input.action {
     @extend .button;
 }
 
+.container {
+    width: 100%;
+}
+
+.section {
+    background-color: transparent;
+}
+
 .is {
+    &-flex {
+        @include display-flex;
+        &.wrap {
+            @include flex-wrap(wrap);
+        }
+    }
+
+    &-block {
+        display: block;
+    }
+
+    &-half {
+        &-screen-height {
+            height: 50vh;
+        }
+
+        &-height {
+            height: 50%;
+        }
+    }
+
+    &-full {
+        &-screen-height {
+            height: 100vh;
+        }
+
+        &-height {
+            height: 100%;
+        }
+    }
+
+    &-lighter {
+        font-weight: lighter;
+    }
+
+    &-normal {
+        font-weight: normal;
+    }
+
+    &-bold {
+        font-weight: bold;
+    }
+
     &-maxheight {
         height: 100%;
     }
@@ -33,52 +89,272 @@ input.action {
         position: relative;
     }
 
-    &-transparent {
+    &-uppercase {
+        text-transform: uppercase;
+    }
+
+    &-paddingless {
+        &-top {
+             padding-top: 0;
+        }
+
+        &-bottom {
+             padding-bottom: 0;
+        }
+
+        &-left {
+             padding-left: 0;
+        }
+
+        &-right {
+             padding-right: 0;
+        }
+
+        &-horizontal {
+             padding-left: 0;
+             padding-right: 0;
+        }
+
+        &-vertical {
+             padding-top: 0;
+             padding-bottom: 0;
+        }
+    }
+
+    &-marginless {
+        &-top {
+            margin-top: 0;
+        }
+
+        &-bottom {
+            margin-bottom: 0;
+        }
+
+        &-left {
+            margin-left: 0;
+        }
+
+        &-right {
+            margin-right: 0;
+        }
+
+        &-horizontal {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        &-vertical {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &-fixed-layout {
+        width: 100%;
+        table-layout: fixed;
+    }
+}
+
+
+.icon {
+    width: auto;
+    height: auto;
+}
+
+.hide {
+    display: none !important;
+}
+
+.has-text-uppercase {
+    text-transform: uppercase;
+}
+
+.has-text-lowercase {
+    text-transform: lowercase;
+}
+
+.hover {
+    &-vertical {
+        &-middle {
+            position: absolute;
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    &.is-bold {
+        font-weight: bold;
+    }
+}
+
+.hero {
+    &.is-transparent {
         background-color: transparent;
     }
 }
 
-.width {
-    &-is {
-        &-320 {
-            width: 320px;
+.columns {
+    @include mobile {
+        &:not(.is-mobile) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+
+    &.wrap {
+        @include flex-wrap(wrap);
+    }
+
+    &.space {
+        &-between {
+            @include justify-content(space-between);
         }
 
-        &-480 {
-            max-width: 480px;
+        &-around {
+            @include justify-content(space-around);
+        }
+    }
+
+    &.align {
+        &-horizontal {
+            &-center {
+                @include justify-content(center);
+            }
+
+            &-right {
+                @include justify-content(flex-end);
+            }
         }
 
-        &-540 {
-            max-width: 540px;
+        &-vertical {
+            &-center {
+                @include align-items(center);
+            }
+
+            &-bottom {
+                @include align-items(flex-end);
+            }
+        }
+    }
+
+    .column {
+        &.is-auto-width {
+            width: auto;
+            @include flex(none);
         }
 
-        &-600 {
-            max-width: 600px;
+        @for $i from 1 through 12 {
+            &.order-#{$i} {
+                order: $i;
+            }
         }
 
-        &-720 {
-            max-width: 720px;
-        }
+        &.is {
+            &-twenty-percent {
+                flex: none;
+                display: block;
+                width: 20%;
+            }
 
-        &-960 {
-            max-width: 960px;
+            &-at {
+                &-top {
+                    @include align-self(flex-start);
+                }
+
+                &-bottom {
+                    @include align-self(center);
+                }
+
+                &-bottom {
+                    @include align-self(flex-end);
+                }
+            }
         }
     }
 }
 
-.icon {
-    width: auto;
+div.field.textarea {
+    max-height: none;
+    max-width: none;
+    min-height: 0;
+    min-width: 0;
+    padding: inherit;
+    position: relative;
+    vertical-align: top;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    box-shadow: none;
+    font-size: inherit;
+    height: auto;
+    border-radius: 0;
 }
 
-.hide,
-.is-hidden {
-    display: none;
-}
 
-.columns {
-    &.should {
-        &-wrap {
-            @include flex-wrap(wrap);
+.has-text-in {
+    &-2-column {
+        @include column-count(2);
+        @include column-gap(2em);
+        @include mobile {
+            @include column-count(1);
+            @include column-gap(0);
         }
+    }
+
+    &-3-column {
+        @include column-count(3);
+        @include column-gap(2em);
+        @include mobile {
+            @include column-count(1);
+            @include column-gap(0);
+        }
+    }
+
+    &-4-column {
+        @include column-count(4);
+        @include column-gap(2em);
+        @include mobile {
+            @include column-count(1);
+            @include column-gap(0);
+        }
+    }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+.button {
+    &.is-outlined {
+        background-color: transparent;
+    }
+
+    &.is-tiny {
+        font-size: 12px;
+        padding-top: 0.25em;
+        padding-bottom: 0.45em;
+        line-height: 1.2;
+        height: auto;
+    }
+}
+
+
+.section {
+    .columns {
+        @include mobile {
+            margin-left: -0.75rem !important;
+            margin-right: -0.75rem !important;
+        }
+    }
+}
+
+a {
+    img {
+        border: none;
     }
 }

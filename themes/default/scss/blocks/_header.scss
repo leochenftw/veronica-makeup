@@ -28,7 +28,33 @@
         background-color: white;
         padding-top: 0;
         a {
-            color: $black;
+            color: $veronica;
+        }
+
+        box-shadow: 0 0 2px rgba(black, 0.1);
+        .navbar {
+            &-item {
+                img {
+                    height: 60px;
+                    width: 68px;
+                    @include until(480px) {
+                        height: 36px;
+                        width: 41px;
+                    }
+                }
+            }
+
+            &-burger {
+                .button {
+                    .fa {
+                        color: $veronica;
+                    }
+                }
+
+                span {
+                    background-color: $veronica;
+                }
+            }
         }
     }
 

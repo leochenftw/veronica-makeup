@@ -8,7 +8,7 @@ use SaltedHerring\Debugger;
  * */
 class PhotoAPI extends BaseRestController
 {
-
+    private $pageSize   =   10;
     private static $allowed_actions = [
         'get'           => "->isAuthenticated"
     ];
@@ -53,11 +53,9 @@ class PhotoAPI extends BaseRestController
             $list                       =   $articles->getIterator();
             $data                       =   [];
 
-            foreach ($list as $item) {
-                $data[]                 =   [
-                                                'thumb' =>  $item->setWidth(320)->URL,
-                                                'full'  =>  $item->URL
-                                            ]
+            foreach ($list as $item)
+            {
+                $data[]                 =   $item->getCached();
             }
 
             if ($paged->MoreThanOnePage()) {
@@ -81,11 +79,16 @@ class PhotoAPI extends BaseRestController
 
         // Debugger::inspect($articles->count());
 
-        $data                           =   $articles->json();
+        $list                           =   [];
+
+        foreach ($articles as $item)
+        {
+            $list[]                     =   $item->getCached();
+        }
 
         return array(
-            'list'                      =>  $data,
-            'count'                     =>  count($data),
+            'list'                      =>  $list,
+            'count'                     =>  count($list),
             'pagination'                =>  array('message' => null)
         );
     }
