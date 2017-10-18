@@ -5,7 +5,10 @@
     .gallery-item {
         &__link {
             display: block;
-            padding: 6px;
+            padding: 12px;
+            @include until(480px) {
+                padding: 6px;
+            }
             width: 33.333%;
         }
         &__thumbnail {
@@ -23,6 +26,12 @@
 
     .ajax {
         &-list {
+            margin-left: -12px;
+            margin-right: -12px;
+            @include until(480px) {
+                margin-left: -6px;
+                margin-right: -6px;
+            }
             opacity: 0;
             visibility: hidden;
             @include transition(all .3s);

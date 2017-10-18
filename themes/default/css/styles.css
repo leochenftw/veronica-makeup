@@ -11589,8 +11589,13 @@ h1.title, h2.title, h3.title, h4.title, h5.title, h6.title {
 }
 #gallery .gallery-item__link {
   display: block;
-  padding: 6px;
+  padding: 12px;
   width: 33.333%;
+}
+@media screen and (max-width: 479px) {
+  #gallery .gallery-item__link {
+    padding: 6px;
+  }
 }
 #gallery .gallery-item__thumbnail {
   display: block;
@@ -11605,12 +11610,20 @@ h1.title, h2.title, h3.title, h4.title, h5.title, h6.title {
   background-color: #fe4365;
 }
 #gallery .ajax-list {
+  margin-left: -12px;
+  margin-right: -12px;
   opacity: 0;
   visibility: hidden;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+@media screen and (max-width: 479px) {
+  #gallery .ajax-list {
+    margin-left: -6px;
+    margin-right: -6px;
+  }
 }
 #gallery .ajax-list.filled {
   opacity: 1;
