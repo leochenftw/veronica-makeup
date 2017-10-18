@@ -10,12 +10,20 @@ SiteVersion:
 Email:
   admin_email: 'Administrator <admin@veronicamakeup.co.nz>'
   noreply_email: 'Auto Replay <no-reply@veronicamakeup.co.nz>'
+  info_email: 'Veronica Zhou <muimuimmmm@gmail.com>'
 SSViewer:
   theme: 'default'
-
+GoogleAPIs:
+  Recaptcha: 6Le1rjQUAAAAAD8IdF0v1J2c2eHCLFCceVhVaZ11
+  Recaptcha_sitekey: 6Le1rjQUAAAAAJVDm2dVmp1-inoaOhMJYqqSzpRm
 Image:
   extensions:
     - ImageExt
+GalleryItem:
+  Categories:
+    'fashion': 'Fashion'
+    'stage': 'Stage'
+    'pre-wedding': 'Pre Wedding'
 Page:
   extensions:
     - OpenGraphExtension
@@ -50,6 +58,3 @@ SeoConfig:
     ErrorPage: false
     RedirectorPage: false
     VirtualPage: false
-SaltedPayment:
-  DefaultCurrency: 'NZD'
-  DefaultOrderClass: 'Order'

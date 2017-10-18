@@ -1,0 +1,36 @@
+#gallery {
+    .subtitle {
+        margin: -0.5rem auto 3rem;
+    }
+    .gallery-item {
+        &__link {
+            display: block;
+            padding: 6px;
+            width: 33.333%;
+        }
+        &__thumbnail {
+            display: block;
+        }
+    }
+
+    .gallery-tab {
+        @include transition(all .3s);
+        &:hover,
+        &.is-active {
+            background-color: $veronica;
+        }
+    }
+
+    .ajax {
+        &-list {
+            opacity: 0;
+            visibility: hidden;
+            @include transition(all .3s);
+            &.filled {
+                opacity: 1;
+                visibility: visible;
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}

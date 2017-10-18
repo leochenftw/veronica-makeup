@@ -24,7 +24,7 @@
         "salted-herring/salted-library": "dev-master",
         "thisisbd/silverstripe-maintenance-mode": "~1.0.5",
         "salted-herring/salted-cropper": "~1.0.1",
-        "heyday/silverstripe-menumanager": ">=2.2.0",
+        "heyday/silverstripe-menumanager": "~2.2.0",
         "sheadawson/silverstripe-linkable": "~1.3",
         "nathancox/sortableuploadfield": "~1.1",
         "ntb/silverstripe-rest-api": "~1.0",

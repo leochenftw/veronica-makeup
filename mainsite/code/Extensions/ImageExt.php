@@ -1,7 +1,7 @@
 <?php
 
-class ImageExt extends DataExtension {
-    protected static $has_one = array();
+class ImageExt extends DataExtension
+{
 
     public function getRatio()
     {

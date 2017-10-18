@@ -1,5 +1,9 @@
 #main {
     padding-bottom: 100px;
+    @include until(480px) {
+        padding-bottom: 24px;
+    }
+
     @import 'elements/form';
 
     .section {

@@ -1,21 +1,13 @@
-/**
- * @file _colours.scss
- *
- * Colours used in the site.
- *
- * Prefix all colours with a namespace so that we can use theming if necessary.
- * The prefix is usually initials of the project - e.g. Salted Herring becomes $sh -> $sh-green: green.
- * */
+$veronica: #fe4365;
+$veronica-lite: #fc9d9a;
+$light-yellow: #f9cdad;
+$light-green: #c8c8a9;
+$med-green: #83af9b;
 
-
-
-
-/**
- * Define Global colours - collections of colours that can be used throughout the site:
- *
- *  $GLOBAL_COLOURS:    ("green", $we-green), ("teal", $we-teal),
- *						("black", $we-black), ("grey", $we-grey),
- *						("light-grey", $we-light-grey), ("white", $we-white),
- *						("mid-grey", $we-mid-grey);
- * */
-$GLOBAL_COLOURS: ();
+$turquoise: $veronica;
+$info: $veronica-lite;
+$cyan: $veronica-lite;
+$green: $med-green;
+$success: $med-green;
+$warning: $light-yellow;
+$yellow: $light-yellow;
