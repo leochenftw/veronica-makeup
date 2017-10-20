@@ -23,7 +23,7 @@ GalleryItem:
   Categories:
     'fashion': 'Fashion'
     'stage': 'Stage'
-    'pre-wedding': 'Pre Wedding'
+    'pre-wedding': 'Wedding'
 Page:
   extensions:
     - OpenGraphExtension

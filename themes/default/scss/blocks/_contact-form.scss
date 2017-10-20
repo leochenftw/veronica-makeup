@@ -1,8 +1,64 @@
 #contact-form {
-    .contact-form-image {
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        background-size: cover;
+    .subtitle {
+        margin: -0.5rem auto 3rem;
+        .button {
+            @include transition(all .3s);
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $veronica;
+            }
+        }
+    }
+
+    .contact-form {
+        @include flex-wrap(wrap);
+        p.notification {
+            position: fixed;
+            z-index: 9999;
+            width: 100%;
+            max-width: 480px;
+            @include until (480px) {
+                max-width: 300px;
+            }
+            left: 50%;
+            top: 20vh;
+            @include transform(translateX(-50%));
+            box-shadow: 0 0 10px rgba(black, 0.5);
+
+        }
+
+        &-image {
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-size: cover;
+        }
+
+        fieldset {
+            div.textarea {
+                margin-bottom: 12px;
+            }
+
+            label {
+                color: $veronica-lite;
+                font-weight: normal;
+                display: inline-block;
+            }
+        }
+
+        .Actions {
+            input.action {
+                width: 100%;
+            }
+
+            .grecaptcha-badge {
+                @include transition(all .3s !important);
+                @include transform(translateX(74px));
+                .touch-bottom & {
+                    @include transform(translateX(0));
+                }
+            }
+        }
     }
 }

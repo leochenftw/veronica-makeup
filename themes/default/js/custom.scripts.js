@@ -1,5 +1,34 @@
 $(document).ready(function(e)
 {
+    // if (QueryString && QueryString.anchor) {
+    //     var anchor      =   QueryString.anchor,
+    //         target      =   $('#' + anchor);
+    //
+    //     if (target.length > 0) {
+    //         $.scrollTo(target, 500, {axis: 'y', offset: -52});
+    //     }
+    // }
+
+    $('.message.notification').removeClass('message').click(function(e)
+    {
+        var thisNotification = $(this);
+        TweenMax.to($(this), 0.3, {opacity: 0, onComplete: function()
+        {
+            thisNotification.remove();
+        }});
+    });
+
+    $('#ContactForm_ContactForm_Appointed').removeClass('hide');
+    $('input[name="ToBook"]').change(function(e)
+    {
+        if ($(this).prop('checked')) {
+            $('#ContactForm_ContactForm_Appointed_Holder').removeClass('hide');
+        } else {
+            $('#ContactForm_ContactForm_Appointed').val('');
+            $('#ContactForm_ContactForm_Appointed_Holder').addClass('hide');
+        }
+    }).change();
+
     $(window).scroll(function(e)
     {
         if ($(window).scrollTop() >= 100) {

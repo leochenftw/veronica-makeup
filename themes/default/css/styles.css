@@ -11605,6 +11605,7 @@ h1.title, h2.title, h3.title, h4.title, h5.title, h6.title {
   -o-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  margin-bottom: 3px;
 }
 #gallery .gallery-tab:hover, #gallery .gallery-tab.is-active {
   background-color: #fe4365;
@@ -11650,73 +11651,6 @@ h1.title, h2.title, h3.title, h4.title, h5.title, h6.title {
 #contact-form .content a, #contact-form .content strong {
   color: #fe4365;
   font-weight: normal;
-}
-#contact-form #ContactForm_ContactForm {
-  display: -webkit-flex;
-  display: flex;
-}
-#contact-form #ContactForm_ContactForm fieldset,
-#contact-form #ContactForm_ContactForm .Actions {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  -webkit-flex-basis: 0;
-  flex-basis: 0;
-  -webkit-flex-shrink: 1;
-  flex-shrink: 1;
-}
-#contact-form #ContactForm_ContactForm fieldset {
-  padding-right: .75rem;
-}
-#contact-form #ContactForm_ContactForm fieldset div.textarea {
-  padding-right: 0;
-  margin-bottom: 0;
-}
-#contact-form #ContactForm_ContactForm fieldset div.textarea textarea.textarea {
-  height: 304px;
-  resize: none;
-}
-@media screen and (max-width: 479px) {
-  #contact-form #ContactForm_ContactForm fieldset div.textarea textarea.textarea {
-    height: 204px;
-  }
-}
-#contact-form #ContactForm_ContactForm .Actions {
-  overflow: hidden;
-  -webkit-flex: none;
-  flex: none;
-  width: 36px;
-}
-#contact-form #ContactForm_ContactForm .Actions .action {
-  width: 400px;
-  -moz-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-  -moz-transform: rotate(90deg) translateY(-100%);
-  -ms-transform: rotate(90deg) translateY(-100%);
-  -webkit-transform: rotate(90deg) translateY(-100%);
-  transform: rotate(90deg) translateY(-100%);
-}
-@media screen and (max-width: 479px) {
-  #contact-form #ContactForm_ContactForm .Actions .action {
-    width: 300px;
-  }
-}
-#contact-form #ContactForm_ContactForm .Actions .grecaptcha-badge {
-  -moz-transition: all 0.3s !important;
-  -o-transition: all 0.3s !important;
-  -webkit-transition: all 0.3s !important;
-  transition: all 0.3s !important;
-  -moz-transform: translateX(74px);
-  -ms-transform: translateX(74px);
-  -webkit-transform: translateX(74px);
-  transform: translateX(74px);
-}
-.touch-bottom #contact-form #ContactForm_ContactForm .Actions .grecaptcha-badge {
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
 }
 
 #main {
@@ -11781,11 +11715,72 @@ h1.title, h2.title, h3.title, h4.title, h5.title, h6.title {
   background-position: center;
 }
 
+#contact-form .subtitle {
+  margin: -0.5rem auto 3rem;
+}
+#contact-form .subtitle .button, #contact-form .subtitle input.action {
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#contact-form .subtitle .button:hover, #contact-form .subtitle input.action:hover, #contact-form .subtitle .button:active, #contact-form .subtitle input.action:active, #contact-form .subtitle .button:focus, #contact-form .subtitle input.action:focus {
+  background-color: #fe4365;
+}
+#contact-form .contact-form {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+#contact-form .contact-form p.notification {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  max-width: 480px;
+  left: 50%;
+  top: 20vh;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 479px) {
+  #contact-form .contact-form p.notification {
+    max-width: 300px;
+  }
+}
 #contact-form .contact-form-image {
   height: 100%;
   background-size: cover;
   background-position: center;
   background-size: cover;
+}
+#contact-form .contact-form fieldset div.textarea {
+  margin-bottom: 12px;
+}
+#contact-form .contact-form fieldset label {
+  color: #fc9d9a;
+  font-weight: normal;
+  display: inline-block;
+}
+#contact-form .contact-form .Actions input.action {
+  width: 100%;
+}
+#contact-form .contact-form .Actions .grecaptcha-badge {
+  -moz-transition: all 0.3s !important;
+  -o-transition: all 0.3s !important;
+  -webkit-transition: all 0.3s !important;
+  transition: all 0.3s !important;
+  -moz-transform: translateX(74px);
+  -ms-transform: translateX(74px);
+  -webkit-transform: translateX(74px);
+  transform: translateX(74px);
+}
+.touch-bottom #contact-form .contact-form .Actions .grecaptcha-badge {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
 }
 
 /* Preload images */

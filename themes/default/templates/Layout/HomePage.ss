@@ -8,9 +8,9 @@
     <div class="container">
         <h2 class="title is-2 has-text-centered">$PhotosTitle</h2>
         <p class="subtitle is-5 has-text-centered">
-            <a class="gallery-tab button is-info is-small" href="/?tab=all">All</a>
+            <a class="gallery-tab button is-info is-active" href="/?tab=all">All</a>
         <% loop $PhotoCategories %>
-            <a class="gallery-tab button is-info is-small" href="/?tab=$Key">$Value</a>
+            <a class="gallery-tab button is-info" href="/?tab=$Key">$Value</a>
         <% end_loop %>
         </p>
         <div class="ajax-content" data-endpoint="/api/v/1/pohto">
@@ -31,6 +31,11 @@
 <section id="contact-form" class="section">
     <div class="container">
         <h2 class="title is-2 has-text-centered">$ContactTitle</h2>
+        <p class="subtitle is-5 has-text-centered">
+            <% loop $SiteConfig.SocialNetworkLinks.Sort('SortOrder ASC') %>
+                <a class="button is-info icon $ExtraClass is-large"<% if $Network == 'wechat' %> data-lightbox="QR Code" data-title="Scan to add Veronica on WeChat"<% end_if %> href="$URL"<% if $Network != 'phone' %> target="_blank"<% end_if %>><i class="fa fa-$Network"></i></a>
+            <% end_loop %>
+        </p>
         <div class="content has-text-centered">$ContactContent</div>
         <div class="columns">
             <div class="column is-4">

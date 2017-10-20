@@ -33,6 +33,16 @@ class ContactForm extends Form
             ''
         )->setAttribute('placeholder', 'Message'));
 
+        $fields->push(CheckboxField::create(
+            'ToBook',
+            'I also like to book an appointment'
+        ));
+
+        $fields->push(TextField::create(
+            'Appointed',
+            ''
+        )->setAttribute('type', 'datetime-local')->addExtraClass('hide'));
+
         $actions = new FieldList();
         $actions->push($btnSubmit = FormAction::create('doContact', 'Contact')->addExtraClass('strong-blue'));
 
@@ -61,20 +71,23 @@ class ContactForm extends Form
             if ($response->success) {
                 $email = new Email();
                 $recipient = Config::inst()->get('Email', 'info_email');
-                $email->To = 'leochenftw@gmail.com,' . $recipient;
-                // $email->To  =   'leochenftw@gmail.com';
+                // $email->To = 'leochenftw@gmail.com,' . $recipient;
+                $email->To  =   'leochenftw@gmail.com';
                 $email->From = $data['Email'];//Config::inst()->get('Email', 'noreply_email');
                 $email->Subject = 'Website enquiry';
 
                 $content = '<h2>Website enquiry</h2>';
                 $content .= '<p>Name: ' . $data['Name'] . '</p>';
                 $content .= '<p>Email: ' . $data['Email'] . '</p>';
+                if (!empty($data['Appointed'])) {
+                    $content .= '<p>Preferred date of appointment: ' . $data['Appointed'] . '</p>';
+                }
                 $content .= '<p>'. str_replace("\n", '<br /><br />',  trim($data['Content'])) . '</p>';
                 $email->Body = $content;
                 $email->send();
 
-                $this->sessionMessage('Thank you for your feedback! We will get back to you shortly.', 'notification is-success', false);
-                return $this->controller->redirect('/?anchor=contact-form');
+                $this->sessionMessage('Thank you for your message! We will get back to you shortly.', 'notification is-success', false);
+                return $this->controller->redirectBack();
             }
 
             $this->sessionMessage('Try again?', 'notification is-danger', false);
