@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" href="/" id="logo" rel="start">
-            <% if $$SiteConfig.Logo %>
+            <% if $SiteConfig.Logo %>
                 <% with $SiteConfig.Logo.SetHeight(80) %>
                 <img alt="$Up.Up.Title" width="$Width" height="$Height" src="$URL" />
                 <% end_with %>

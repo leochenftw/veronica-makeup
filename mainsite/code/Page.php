@@ -1,5 +1,6 @@
 <?php
 use SaltedHerring\Utilities as Utilities;
+use SaltedHerring\Debugger;
 class Page extends SiteTree
 {
 
@@ -36,6 +37,10 @@ class Page_Controller extends ContentController
     );
 
     public function init() {
+        if ($_SERVER['HTTP_HOST'] != 'www.veronicamakeup.co.nz') {
+            $this->redirect('https://www.veronicamakeup.co.nz');
+        }
+
         parent::init();
 
         Requirements::block(THIRDPARTY_DIR . '/jquery/jquery.js');
